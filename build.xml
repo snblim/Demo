@@ -1,0 +1,13 @@
+<project name="Demo" default="run">
+	<target name="run">
+		<path id="demo.classpath">
+			<path path="bin" />
+			<fileset dir="lib" includes="**/*.jar" />
+		</path>
+
+		<java classpathref="demo.classpath" fork="true" newenvironment="true" classname="demo.Main">
+
+			<jvmarg line="-javaagent:${basedir}/lib/openejb-javaagent-4.0.0.jar" />
+		</java>
+	</target>
+</project>
